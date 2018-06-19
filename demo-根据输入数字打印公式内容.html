@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据输入数字打印公式内容</title>
+</head>
+<body>
+	<input type="text" value="3" id="num" />
+	<button id="btn">play</button>
+	<script>
+		var $num = document.getElementById('num'),
+			$btn = document.getElementById('btn');
+		$btn.onclick = function () {
+			var n = Number($num.value);
+			if(!isNaN(n)){
+				// var i = 0,
+				// 	j = n;
+				// do {
+				// 	console.log(i + '+' + j + '=' + n);
+				// 	i++;
+				// 	j--;
+				// } while (i <= n);
+				// var i = 0,
+				// 	j = n;
+				// while ( i <= n ) {
+				// 	console.log(i + '+' + j + '=' + n);
+				// 	i++;
+				// 	j--;
+				// }
+				for(var i = 0, j = n; ; i++, j--){
+					if( i > n ) break;
+					console.log(i + ' + ' + j + ' = ' + n);
+				}
+			}
+		}		
+	</script>	
+</body>
+</html>

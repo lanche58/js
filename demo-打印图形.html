@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打印*图形</title>
+</head>
+<body>
+	<script>
+		for (var i = 1; i <= 9; i++) {
+			var str = "";
+			for(var j = 1; j <= i; j++) {
+				str += "*"; 
+			}
+			console.log(str);
+		}
+
+		for ( var i = 1; i <= 9; i++ ) {
+			var blank = "";
+			for ( var k = 1; k <= 9 - i; k++ ){
+				blank += " ";
+			}
+			var str = "";
+			for( var j = 1; j <= i; j++ ) {
+				str += "*"; 
+			}
+			str = blank + str;
+			console.log(str);
+		}
+		for (var i = 1; i <= 9; i++ ) {
+			var blank = "";
+			for (var k = 1; k <= 9 - i; k++){
+				blank += " ";
+			}
+			var str = "";
+			for (var j = 1; j <= i*2 - 1; j++) {
+				str += "*"; 
+			}
+			str = blank + str;
+			console.log(str);
+		}
+		for (var i = 1; i <= 9; i++ ) {
+			var blank = "";
+			for (var k = 1; k <= i; k++){
+				blank += " ";
+			}
+			var str = "";
+			for (var j = 1; j <= 8*2 - 2*i + 1; j++) {
+				str += "*"; 
+			}
+			str = blank + str;
+			console.log(str);
+		}
+	</script>
+</body>
+</html>

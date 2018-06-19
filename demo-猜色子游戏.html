@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>猜色子游戏</title>
+</head>
+<body>
+	<p>每次可以选择押金币数量，以及押大/小，</p>
+	<p>点击“开”的时候，随机生成三个色子点数。</p>
+	<p>根据生成色子点数和判断，如果点数和小于等于10，则开小，否则开大。</p>
+	<p>判断是否押中，押中则奖励所押金币等额的金币值，否则扣除所押金币。</p>
+	押金币：<input type="text" id="money" value="3000" /><br/>
+	押大/小：<select id="bet"><option>大</option><option>小</option></select><br/>
+	<button id="btn">play</button><br/>
+	第一个色子：<input type="text" id="one" readonly /><br/>
+	第二个色子：<input type="text" id="two" readonly /><br/>
+	第三个色子：<input type="text" id="three" readonly /><br/>
+	总点数：<input type="text" id="num" readonly /><br/>
+	开大/小：<input type="text" id="result" readonly /><br/>
+	<script>
+		var $btn = document.getElementById('btn'),
+			$money = document.getElementById('money'),
+			$bet = document.getElementById('bet'),
+			$one = document.getElementById('one'),
+			$two = document.getElementById('two'),
+			$three = document.getElementById('three'),
+			$num = document.getElementById('num'),
+			$result = document.getElementById('result'),
+			o,
+			t,
+			th,
+			n,
+			r,
+			m;
+		$btn.onclick = function () {
+			o = Math.floor(Math.random()*6) + 1;
+			t = Math.floor(Math.random()*6) + 1;
+			th = Math.floor(Math.random()*6) + 1;
+			$one.value = o;
+			$two.value = t;
+			$three.value = th;
+			n = o + t + th;
+			$num.value = n;
+			r = n > 10 ? '大' : '小';
+			$result.value = r;
+			m = $money.value;
+			r === $bet.value ? console.log('你赢了，你获得了' + m*2) : console.log('你输掉了所有的金币');
+		}
+	</script>
+
+
+	
+</body>
+</html>

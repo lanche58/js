@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易的计算器</title>
+</head>
+<body>
+	<p>1. 计算两个文本框中数字指定运算符计算结果，结果保留两位小数</p>
+	<input type="text" id="num1" />
+	<select id="operator">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>%</option>
+	</select>
+	<input type="text" id="num2" />
+	<button type="button" id="btn">=</button>
+	<input type="text" id="result" readonly />
+	<script>
+		var $num1 = document.getElementById('num1'),
+			$num2 = document.getElementById('num2'),
+			$operator = document.getElementById('operator'),
+			$result = document.getElementById('result'),
+			$btn = document.getElementById('btn');
+		$btn.onclick = function(){
+			var n1 = $num1.value,
+				n2 = $num2.value,
+				o = $operator.value,
+				r;
+			if(n1 === '' || n2 === ''){
+				alert('请输入数字');
+			} else {
+				n1 = Number(n1);
+				n2 = Number(n2);
+				if(!isNaN(n1) && !isNaN(n2)){
+					switch(o){
+						case '+':
+							r = n1 + n2;
+							break;
+						case '-':
+							r = n1 - n2;
+							break;
+						case '*':
+							r = n1 * n2;
+							break;
+						case '/':
+							r = n1 / n2;
+							break;
+						default:
+							r = n1 % n2;
+							break;
+					}
+					$result.value = r;
+				} else {
+					alert('输入数字有误');
+				}
+			}
+		};
+	</script>
+</body>
+</html>

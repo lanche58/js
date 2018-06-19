@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算50年后的工资</title>
+</head>
+<body>
+	<p>2．入职薪水10K，每年涨幅5%，50年后工资多少？</p>
+	<script>
+		var wages = 10000,
+			range = 0.05;
+		for( var i = 1; i <= 50; i++ ) {
+			wages += range*wages;
+		}
+		console.log('50年后的工资：' + wages.toFixed(2));
+	</script>
+	
+</body>
+</html>
