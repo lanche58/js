@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>猜数字</title>
+ </head>
+ <body>
+ 	<script>
+ 		var num = Math.floor(Math.random()*100);
+ 		var guess = 0;
+ 		var count = 0;
+ 		console.log(num);
+ 		// 条件：guess != num
+ 		do {
+ 			guess = Number(prompt("请输入一个数："));
+ 			count++;
+ 			if( guess > num ) {
+ 				alert("猜大了，请重猜！");
+ 			} else if ( guess < num) {
+ 				alert("猜小了，请重猜！");
+ 			} else {
+ 				alert("恭喜您！猜中了，你将获得500万现金。" + count);
+ 			}
+ 		} while (guess != num);
+ 	</script>
+ </body>
+ </html>

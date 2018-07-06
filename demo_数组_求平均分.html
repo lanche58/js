@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求平均分</title>
+</head>
+<body>
+	<script>
+		var scores = [89, 90, 67, 45, 98];
+		// for (var i = 0; i < 5; i++) {
+		// 	scores[i] = Number(prompt("请输入第" + (i+1) + "的分数："));
+		// }
+		var t = 0
+		for (var i = 0; i <= scores.length - 1; i++) {
+			t += scores[i];
+		}
+		console.log(scores.join());
+		console.log("平均分：" + t/scores.length);
+		console.log("*********************");
+
+		// 打印平均分以下的值
+		for (var i in scores) {
+			if (scores[i] < t/scores.length) console.log(scores[i]);
+		}
+	</script>
+</body>
+</html>

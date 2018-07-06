@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for-in使用</title>
+</head>
+<body>
+	<script>
+		var stu = {
+			name: "张三",
+			age: 45,
+			sex: "男",
+			study: function(){
+				console.log("正在学习中。。。");
+			}
+		};
+
+		for (var i in stu) {
+			console.log(stu[i]);
+		};
+	</script>
+</body>
+</html>

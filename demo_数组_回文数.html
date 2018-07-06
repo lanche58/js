@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>回文数</title>
+</head>
+<body>
+	<input id="num" placeholder="请输入一个数：" type="text" />
+	<button id="btn">是否为回文数</button>
+	<input id="result" type="text" readonly />
+	<script>
+		var _num = document.getElementById('num'),
+			_btn = document.getElementById('btn'),
+			_result = document.getElementById('result'),
+			arr = [];
+		_btn.onclick = function () {
+			var val = _num.value,
+				i = 0;
+			if(val === "") alert("请输入一个数！！！");
+			while (val != 0) {
+				arr[i] = val % 10;
+				val = Math.floor(val / 10);
+				i++
+			};
+			// arr.reverse();
+			console.log(arr);
+			// var len = arr.length,
+			// 	is = true;
+			// for (var m = 0; m < Math.floor(len / 2); m++) {
+			// 	if (arr[m] !== arr[len - 1 - m]) {
+			// 		is = false;
+			// 		break;
+			// 	} 
+			// };
+			// is === false ? _result.value = "否" : _result.value = "是";
+			
+
+
+			// 第二种思路
+			var bef = arr.join(),
+				aft = arr.reverse().join();
+			bef === aft ? _result.value = "是" : _result.value = "否";
+		};
+	</script>
+</body>
+</html>
