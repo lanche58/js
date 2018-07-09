@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组ES5新增API</title>
+</head>
+<body>
+	<script>
+		var arr = [5, 3, 87, 5, 34, 65, 3, 5, 3, 87, 9];
+		console.log('原数组：', arr.join());
+		// 数组每一位增加30%
+		// 方法一
+		// arr.forEach(function(curr, i, arr){
+		// 	arr[i] = curr*1.3;
+		// })
+		// 方法二
+		// var result = arr.map(function(curr, i, arr){
+		// 	return curr*1.3;
+		// })
+		// 检测数组中是否含有60
+		// var result = arr.some(function(curr, i , arr){
+		// 	return curr === 60;
+		// })
+		// console.log('运算后的结果：', result);
+		// 获取数组中小于等于10的元素
+		// var result = arr.filter(function(curr, i, arr){
+		// 	return curr <= 10;
+		// });
+		// console.log('运算后的数组：', result.join());
+		// 获取数组中某个元素出现位置的全部索引
+		// 
+		// var l = arr.lastIndexOf(5,0);
+		// console.log(l);
+		// function getAllIndex(value, arr){
+		// 	// var f = 0,
+		// 	// 	// l = arr.length,
+		// 	// 	str = "所有索引：";
+		// 	// // while () {
+
+		// 	// // }
+		// 	// do {
+		// 	// 	f = arr.indexOf(value, f);
+		// 	// 	str += f + " ";
+		// 	// 	f++;
+		// 	// } while ( f !== -1 )
+		// 	// do {
+		// 	// 	f++;
+		// 	// 	l--;
+		// 	// 	f = arr.indexOf(value, f);
+		// 	// 	l = arr.lastIndexOf(value, l);
+		// 	// 	if (f !== l) {
+		// 	// 		str += ',' + f +',' + l; 
+		// 	// 	} else {
+		// 	// 		str += ',' + f; 
+		// 	// 	}
+		// 	// } while (f !== l);
+		// 	console.log(str);
+		// }
+		// getAllIndex(5,arr);
+		// 去掉数组重复
+		// 
+		function getAllIndex(value, arr){
+			var index = arr.indexOf(value) + 1;
+			while (true) {
+				index = arr.indexOf(value, index);
+				if(index === -1) break;
+				arr.splice(index, 1);
+			}
+		};
+
+		function norepeat(arr){
+			arr.forEach(function(curr,i,arr){
+				getAllIndex(curr, arr);
+			})
+			console.log(arr);
+		};
+
+		norepeat(arr);
+	</script>
+</body>
+</html>
