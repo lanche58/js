@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>洗扑克</title>
+</head>
+<body>
+	<script>
+		var cards = ["大王", "小王"];
+		var types = ["黑桃", "红桃", "黑方", "红方"];
+		var nums = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+		types.forEach(function(curr1){
+			nums.forEach(function(curr2){
+				cards.push(curr1 + curr2);
+			});
+		});
+		console.log(cards);
+
+
+		// 方法一
+		// for (var i = 0; i < cards.length; i++) {
+		// 	var rand = Math.floor(Math.random()*cards.length);
+		// 	var temp = cards[i];
+		// 	cards[i] = cards[rand];
+		// 	cards[rand] = temp;
+		// };
+		// console.log(cards);
+
+		// 方法二
+		cards.sort(function(){
+			return Math.random() - 0.5;
+		});
+		console.log(cards);
+	</script>
+</body>
+</html>

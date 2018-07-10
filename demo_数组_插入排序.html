@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入排序</title>
+</head>
+<body>
+	<script>
+		var arr = [6, 9, 0, 5, 4, 7, 2];
+		arr.sort(function(a, b){
+			return a - b;
+		});
+		console.log(arr.join());
+
+		// 方法一
+		var insert = 3;
+		arr.push(insert);
+		arr.sort(function(a, b){
+			return a - b;
+		});
+		console.log(arr.join());
+
+		// 方法二
+		var insert2 = 8,
+			index = arr.length;
+		while (true) {
+			if(arr[index - 1] > insert2) {
+				arr[index] = arr[index - 1];
+				index--;
+			} else {
+				break;
+			}
+		};
+		arr[index] = insert2;
+		console.log(arr.join());
+
+		// 方法三
+		var insert3 = 1,
+			index = arr.length;
+		while (true) {
+			if(arr[index - 1] > insert3) {
+				index--;
+			} else {
+				break;
+			}
+		};
+		arr.splice(index, 0, insert3);
+		console.log(arr.join());
+	</script>
+</body>
+</html>
