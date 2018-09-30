@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>数据类型</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	</head>
+	<body>
+		<div style="width: 1000px; margin: 0 auto 60px auto;">
+			<p style="font-size: 18px; font-weight: bold;"><i style="color: red; font-size: 20px;">问：</i>数据类型有哪些?</p>
+			<div style="border: 1px solid #ccc; padding: 30px; margin-top: 10px;">
+				<i style="color: green; font-size: 20px; display: block; font-weight: bold;">答：</i>
+				<p style="font-size: 16px; padding-left: 30px;">
+					Number<br />
+					String<br />
+					Boolean<br />
+					Undefined<br />
+					Null<br />
+					Object<br />
+				</p>
+			</div>
+		</div>
+		<div style="width: 1000px; margin: 0 auto 60px auto;">
+			<p style="font-size: 18px; font-weight: bold;"><i style="color: red; font-size: 20px;">问：</i>检测变量的数据类型--typeof操作符?</p>
+			<div style="border: 1px solid #ccc; padding: 30px; margin-top: 10px;">
+				<i style="color: green; font-size: 20px; display: block; font-weight: bold;">答：</i>
+				<p style="font-size: 16px; padding-left: 30px;">
+					typeof&nbsp;&nbsp;Number -- <em style="color: #999;">number</em><br />
+					typeof&nbsp;&nbsp;String -- <em style="color: #999;">string</em><br />
+					typeof&nbsp;&nbsp;Boolean -- <em style="color: #999;">boolean</em><br />
+					typeof&nbsp;&nbsp;Undefined -- <em style="color: #999;">undefined</em><br />
+					typeof&nbsp;&nbsp;Null -- <em style="color: #999;">object</em><br />
+					typeof&nbsp;&nbsp;Object -- <em style="color: #999;">object</em><br />
+					typeof&nbsp;&nbsp;Function -- <em style="color: #999;">function</em><br />
+				</p>
+				<p style="font-size: 16px; color: #666; font-weight: bold; margin-top: 20px;"><i style="color: blue;">注：</i>typeof不能区分Null, Object</p>
+			</div>
+			<script type="text/javascript">
+//				var a = 10;
+//				var b = "abc";
+//				var c = false;
+//				var d = undefined;
+//				var e = null;
+//				var f = {};
+//				var g = function(){};
+//				console.log(typeof a);
+//				console.log(typeof b);
+//				console.log(typeof c);
+//				console.log(typeof d);
+//				console.log(typeof e);
+//				console.log(typeof f);
+			</script>
+		</div>
+		<div style="width: 1000px; margin: 0 auto 60px auto;">
+			<p style="font-size: 18px; font-weight: bold;"><i style="color: red; font-size: 20px;">问：</i>其他类型转化为布尔类型值为false的情况？</p>
+			<div style="border: 1px solid #ccc; padding: 30px; margin-top: 10px;">
+				<i style="color: green; font-size: 20px; display: block; font-weight: bold;">答：</i>
+				<p style="font-size: 16px; padding-left: 30px;">
+					Boolean(String) -- Boolean("") -> false<br />
+					Boolean(Number) -- Boolean(0/NaN) -> false<br />
+					Boolean(Undefined) -- Boolean(undefined) -> false<br />
+					Boolean(Null) -- Boolean(null) -> false<br />	
+				</p>
+			</div>
+			<script type="text/javascript">
+//				console.log(Boolean(""));
+//				console.log(Boolean(0));
+//				console.log(Boolean(NaN));
+//				console.log(Boolean(undefined));
+//				console.log(Boolean(null));
+			</script>
+		</div>
+		<script type="text/javascript">
+//			var aaa;
+//			console.log(aaa == undefined);
+//console.log(typeof aaa);
+//			console.log(aaa);
+//console.log(null == undefined);
+//var a = 1.;
+//console.log(a);
+//console.log(3.125e7);
+//console.log(3e-6);
+//console.log(typeof Infinity);
+//console.log(Number.MIN_VALUE);
+//console.log(Number.MAX_VALUE);
+//var a = 5e-313;
+//console.log(a);
+//var a = Number.NEGATIVE_INFINITY;
+//var b = Number.POSITIVE_INFINITY;
+//console.log(b);
+//var a = 'acb';
+//console.log(10/a);
+//console.log(NaN == NaN);
+//console.log(isNaN(NaN));
+//console.log(isNaN(10));
+//console.log(isNaN("10"));
+//console.log(isNaN("blue"));
+//console.log(isNaN(true));
+console.log(Number(true));
+console.log(Number(false));
+console.log(Number(null));
+console.log(Number(undefined));
+console.log(Number("010"));
+console.log(Number("1.02"));
+console.log(Number("0xf"));
+console.log(Number(""));
+		</script>
+	</body>
+</html>
